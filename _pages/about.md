@@ -1,49 +1,86 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "西瓜百科全书"
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+# 西瓜百科全书
 
-A data-driven personal website
-======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
+## 夏日消暑圣品 —— 西瓜
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over - just be sure to save the markdown files! Finally, you can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+西瓜原产于非洲，早在四千年前，埃及人就已经开始种植西瓜，并将其作为重要的水果之一。随着时间的推移，西瓜逐渐传播到世界各地，成为了人们喜爱的夏季水果。
 
-Getting started
-======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this template](https://github.com/academicpages/academicpages.github.io) by clicking the "Use this template" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
+  
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+西瓜的果实多汁，味道甜美，其外皮通常为绿色，带有深浅不一的条纹，果肉则多为红色或黄色，口感脆嫩，是消暑解渴的佳品。
 
-Create content & metadata
-------
-For site content, there is one markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+### 营养成分
 
-**Markdown generator**
+营养成分
 
-The repository includes [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual markdown files that will be properly formatted for the Academic Pages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the markdown files, then commit and push them to the GitHub repository.
+含量
 
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
+维生素 C
 
-Example: editing a markdown file for a talk
-![Editing a markdown file for a talk](/images/editing-talk.png)
+约 9.0 毫克 / 100 克
 
-For more info
-------
-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+维生素 B6
+
+约 0.1 毫克 / 100 克
+
+钾
+
+约 104 毫克 / 100 克
+
+### 食用方法
+
+-   直接食用：将西瓜洗净，切成块状或片状，即可享用其清甜的口感。
+-   制作饮品：可以将西瓜榨汁，加入适量的蜂蜜或柠檬汁，制成美味的西瓜汁。
+-   制作甜点：西瓜可以用来制作西瓜冰淇淋、西瓜果冻等甜点，增添别样的风味。
+
+## 西瓜相关美食推荐
+
+### 美食列表
+
+-   西瓜薄荷沙拉：西瓜块搭配新鲜薄荷、奶酪和坚果，清爽又美味。
+-   西瓜西米露：西瓜汁与煮好的西米混合，再加入椰奶，香甜可口。
+-   西瓜披萨：在披萨饼上铺上西瓜片、火腿和芝士，烤制出独特的风味。
+
+### 用户评价
+
+-   超爱西瓜！夏天每天都要吃，水分足又甜，解渴又消暑。—— 西瓜小吴，2018 年 8 月 8 日
+-   用西瓜做了西瓜冰沙，家里人都很喜欢，以后要尝试更多西瓜美食。—— 过期蜂蜜水，2018 年 8 月 18 日
+
+## 西瓜的历史
+
+西瓜的种植历史可以追溯到数千年前的非洲东北部。考古学家在埃及古墓壁画中发现了西瓜的图案，这表明早在公元前 2000 年左右，埃及人就已经开始种植和食用西瓜。随着贸易和文化的交流，西瓜逐渐传播到地中海地区、中东和印度。
+
+  
+
+大约在唐朝时期，西瓜经丝绸之路传入中国，当时被称为 “寒瓜” 或者 “夏瓜”。到了宋代，西瓜在中国得到了广泛种植和普及，成为了夏季消暑的常见水果。此后，西瓜又从中国传播到了朝鲜、日本等亚洲国家。
+
+  
+
+在 16 世纪，欧洲殖民者将西瓜带到了美洲大陆。如今，西瓜已经在全球范围内广泛种植，成为了人们喜爱的夏季水果之一。
+
+## 西瓜的培育方法
+
+1.  **选地整地**：选择地势高、排水良好、土层深厚、肥沃疏松的砂质壤土。在种植前，要进行深耕细耙，并施足基肥，一般每亩施入有机肥 3000 - 5000 公斤、过磷酸钙 50 公斤、硫酸钾 20 公斤。
+2.  **品种选择**：根据当地的气候条件、市场需求和栽培方式，选择适宜的西瓜品种。常见的品种有京欣一号、黑美人、早春红玉等。
+3.  **播种育苗**：西瓜可以采用直播或育苗移栽的方式。直播一般在当地终霜期过后进行，育苗移栽则可以提前在温室或大棚内进行育苗，待幼苗长到 3 - 4 片真叶时，再移栽到田间。
+4.  **田间管理**：在西瓜生长期间，要及时进行中耕除草、追肥、浇水、整枝打杈等管理工作。同时，要注意防治病虫害，确保西瓜的正常生长。
+5.  **收获**：西瓜的收获时间要根据品种、栽培方式和市场需求来确定。一般来说，早熟品种在开花后 28 - 30 天左右成熟，中熟品种在开花后 32 - 35 天左右成熟，晚熟品种在开花后 35 - 40 天左右成熟。
+
+## 西瓜百科全书程序资源
+
+-   Gitbub 链接：[https://github.com/wujc888/watermelon](https://github.com/wujc888/watermelon)
+-   百度网盘链接：[https://pan.baidu.com/s/1YXKNHkhcAtbanCyCSdEfcQ](https://pan.baidu.com/s/1YXKNHkhcAtbanCyCSdEfcQ)
+-   提取码：xgxw
+
+## 底部信息
+
+© 2025 版权所有 | 联系我们：xi_gua888@126.com  
+版本号：v1.0.8
