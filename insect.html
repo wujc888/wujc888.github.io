@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>西瓜百科全书</title>
+  <style>
+    /* 全局样式 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+    }
+
+    /* 网页顶部标题样式 */
+   .top-title {
+      text-align: center;
+      background-color: #c8e6c9;
+      padding: 20px 0;
+      font-size: 30px;
+      color: #e53935;
+      font-weight: bold;
+    }
+
+    /* 导航栏样式 */
+   .navbar {
+      height: 60px;
+      background-color: #c8e6c9;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+   .navbar.back-icon {
+      width: 24px;
+      height: 24px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23388e3c"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>');
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-left: 20px;
+      cursor: pointer;
+    }
+
+   .navbar.back-icon:hover {
+      transform: scale(1.1);
+    }
+
+   .navbar.share-icon {
+      width: 24px;
+      height: 24px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23388e3c"><path d="M17 11.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0zM18 16a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm0-12a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/></svg>');
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+   .navbar.share-icon:hover {
+      transform: scale(1.1);
+    }
+
+    /* 选择栏样式 */
+   .selector {
+      display: flex;
+      justify-content: center;
+      background-color: #e8f5e9;
+      padding: 10px 0;
+    }
+
+   .selector-item {
+      padding: 8px 16px;
+      cursor: pointer;
+      color: #388e3c;
+      margin: 0 10px;
+      border-radius: 5px;
+    }
+
+   .selector-item:hover {
+      background-color: #c8e6c9;
+    }
+
+    /* 内容区域样式 */
+   .content {
+      padding: 20px;
+    }
+
+   .content-section,
+   .nutrition-section,
+   .usage-section,
+   .food-recommendation-section,
+   .history-section,
+   .cultivation-section,
+   .quiz-section,
+   .program-section {
+      display: none;
+    }
+
+    /* 标题区域样式 */
+   .title-section {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+   .title-section h1 {
+      font-size: 30px;
+      color: #e53935;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+   .title-section hr {
+      width: 100px;
+      height: 2px;
+      background-color: #c8e6c9;
+      border: none;
+      margin: 0 auto;
+    }
+
+    /* 内容介绍区域样式 */
+   .content-section p {
+      font-size: 16px;
+      color: #333333;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* 营养成分区域样式 */
+   .nutrition-section table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+   .nutrition-section table th,
+   .nutrition-section table td {
+      border: 1px solid #c8e6c9;
+      padding: 10px;
+    }
+
+   .nutrition-section table th {
+      background-color: #c8e6c9;
+      font-weight: bold;
+    }
+
+   .nutrition-section table td {
+      font-size: 14px;
+      color: #333333;
+    }
+
+    /* 食用方法区域样式 */
+   .usage-section ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+   .usage-section ul li {
+      font-size: 16px;
+      color: #333333;
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+   .usage-section ul li:before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #388e3c;
+      position: absolute;
+      left: 0;
+      top: 8px;
+    }
+
+    /* 美食推荐区域样式 */
+   .food-recommendation-section h2 {
+      font-size: 20px;
+      color: #388e3c;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+   .food-recommendation-section ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+   .food-recommendation-section ul li {
+      font-size: 16px;
+      color: #333333;
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+   .food-recommendation-section ul li:before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #388e3c;
+      position: absolute;
+      left: 0;
+      top: 8px;
+    }
+
+   .user-review {
+      border: 1px solid #c8e6c9;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+    }
+
+   .user-review p {
+      font-size: 14px;
+      color: #333333;
+      margin: 0;
+    }
+
+   .user-review span {
+      font-size: 12px;
+      color: #777777;
+      display: block;
+      margin-top: 5px;
+    }
+
+    /* 西瓜历史区域样式 */
+   .history-section h2 {
+      font-size: 20px;
+      color: #388e3c;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+   .history-section p {
+      font-size: 16px;
+      color: #333333;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* 培育方法区域样式 */
+   .cultivation-section h2 {
+      font-size: 20px;
+      color: #388e3c;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+   .cultivation-section p {
+      font-size: 16px;
+      color: #333333;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* 问答游戏区域样式 */
+   .quiz-section h2 {
+      font-size: 20px;
+      color: #388e3c;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+   .question {
+      margin-bottom: 20px;
+    }
+
+   .question p {
+      font-size: 16px;
+      color: #333333;
+      margin-bottom: 10px;
+    }
+
+   .answer {
+      margin-bottom: 5px;
+      cursor: pointer;
+      padding: 8px 12px;
+      border: 1px solid #c8e6c9;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+
+   .answer:hover {
+      background-color: #e8f5e9;
+    }
+
+    /* 选中答案的样式 */
+   .answer.selected {
+      background-color: #c8e6c9;
+    }
+
+    /* 底部信息区域样式 */
+   .footer {
+      background-color: #c8e6c9;
+      text-align: center;
+      padding: 20px;
+      color: #333333;
+      font-size: 12px;
+    }
+
+    /* 结果显示区域样式 */
+   .result {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #c8e6c9;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+
+    /* 程序区域样式 */
+   .program-section h2 {
+      font-size: 20px;
+      color: #388e3c;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+   .program-section p {
+      font-size: 16px;
+      color: #333333;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- 网页顶部标题 -->
+  <div class="top-title">西瓜百科全书</div>
+
+  <!-- 导航栏 -->
+  <div class="navbar">
+    <div class="back-icon"></div>
+    <div class="share-icon"></div>
+  </div>
+
+  <!-- 选择栏 -->
+  <div class="selector">
+    <div class="selector-item" data-target="all">全部</div>
+    <div class="selector-item" data-target="intro">西瓜介绍</div>
+    <div class="selector-item" data-target="food">西瓜美食</div>
+    <div class="selector-item" data-target="history">西瓜历史</div>
+    <div class="selector-item" data-target="cultivation">培育方法</div>
+    <div class="selector-item" data-target="quiz">问答游戏</div>
+    <div class="selector-item" data-target="program">西瓜百科全书程序</div>
+  </div>
+
+  <!-- 内容区域 -->
+  <div class="content">
+    <!-- 标题区域 -->
+    <div class="title-section">
+      <h1>夏日消暑圣品——西瓜</h1>
+      <hr>
+    </div>
+
+    <!-- 内容介绍区域 -->
+    <div class="content-section" data-group="intro">
+      <p>西瓜原产于非洲，早在四千年前，埃及人就已经开始种植西瓜，并将其作为重要的水果之一。随着时间的推移，西瓜逐渐传播到世界各地，成为了人们喜爱的夏季水果。</p>
+      <p>西瓜的果实多汁，味道甜美，其外皮通常为绿色，带有深浅不一的条纹，果肉则多为红色或黄色，口感脆嫩，是消暑解渴的佳品。</p>
+    </div>
+
+    <!-- 营养成分区域 -->
+    <div class="nutrition-section" data-group="intro">
+      <table>
+        <thead>
+          <tr>
+            <th>营养成分</th>
+            <th>含量</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>维生素C</td>
+            <td>约 9.0 毫克/100 克</td>
+          </tr>
+          <tr>
+            <td>维生素B6</td>
+            <td>约 0.1 毫克/100 克</td>
+          </tr>
+          <tr>
+            <td>钾</td>
+            <td>约 104 毫克/100 克</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 食用方法区域 -->
+    <div class="usage-section" data-group="intro">
+      <ul>
+        <li>直接食用：将西瓜洗净，切成块状或片状，即可享用其清甜的口感。</li>
+        <li>制作饮品：可以将西瓜榨汁，加入适量的蜂蜜或柠檬汁，制成美味的西瓜汁。</li>
+        <li>制作甜点：西瓜可以用来制作西瓜冰淇淋、西瓜果冻等甜点，增添别样的风味。</li>
+      </ul>
+    </div>
+
+    <!-- 美食推荐区域 -->
+    <div class="food-recommendation-section" data-group="food">
+      <h2>西瓜相关美食推荐</h2>
+      <ul>
+        <li>西瓜薄荷沙拉：西瓜块搭配新鲜薄荷、奶酪和坚果，清爽又美味。</li>
+        <li>西瓜西米露：西瓜汁与煮好的西米混合，再加入椰奶，香甜可口。</li>
+        <li>西瓜披萨：在披萨饼上铺上西瓜片、火腿和芝士，烤制出独特的风味。</li>
+      </ul>
+      <h2>用户评价</h2>
+      <div class="user-review">
+        <p>超爱西瓜！夏天每天都要吃，水分足又甜，解渴又消暑。</p>
+        <span>——西瓜小吴，2018年8月8日</span>
+      </div>
+      <div class="user-review">
+        <p>用西瓜做了西瓜冰沙，家里人都很喜欢，以后要尝试更多西瓜美食。</p>
+        <span>——过期蜂蜜水，2018年8月18日</span>
+      </div>
+    </div>
+
+    <!-- 西瓜历史区域 -->
+    <div class="history-section" data-group="history">
+      <h2>西瓜的历史</h2>
+      <p>西瓜的种植历史可以追溯到数千年前的非洲东北部。考古学家在埃及古墓壁画中发现了西瓜的图案，这表明早在公元前 2000 年左右，埃及人就已经开始种植和食用西瓜。随着贸易和文化的交流，西瓜逐渐传播到地中海地区、中东和印度。</p>
+      <p>大约在唐朝时期，西瓜经丝绸之路传入中国，当时被称为“寒瓜”或者“夏瓜”。到了宋代，西瓜在中国得到了广泛种植和普及，成为了夏季消暑的常见水果。此后，西瓜又从中国传播到了朝鲜、日本等亚洲国家。</p>
+      <p>在 16 世纪，欧洲殖民者将西瓜带到了美洲大陆。如今，西瓜已经在全球范围内广泛种植，成为了人们喜爱的夏季水果之一。</p>
+    </div>
+
+    <!-- 培育方法区域 -->
+    <div class="cultivation-section" data-group="cultivation">
+      <h2>西瓜的培育方法</h2>
+      <p>1. **选地整地**：选择地势高、排水良好、土层深厚、肥沃疏松的砂质壤土。在种植前，要进行深耕细耙，并施足基肥，一般每亩施入有机肥 3000 - 5000 公斤、过磷酸钙 50 公斤、硫酸钾 20 公斤。</p>
+      <p>2. **品种选择**：根据当地的气候条件、市场需求和栽培方式，选择适宜的西瓜品种。常见的品种有京欣一号、黑美人、早春红玉等。</p>
+      <p>3. **播种育苗**：西瓜可以采用直播或育苗移栽的方式。直播一般在当地终霜期过后进行，育苗移栽则可以提前在温室或大棚内进行育苗，待幼苗长到 3 - 4 片真叶时，再移栽到田间。</p>
+      <p>4. **田间管理**：在西瓜生长期间，要及时进行中耕除草、追肥、浇水、整枝打杈等管理工作。同时，要注意防治病虫害，确保西瓜的正常生长。</p>
+      <p>5. **收获**：西瓜的收获时间要根据品种、栽培方式和市场需求来确定。一般来说，早熟品种在开花后 28 - 30 天左右成熟，中熟品种在开花后 32 - 35 天左右成熟，晚熟品种在开花后 35 - 40 天左右成熟。</p>
+    </div>
+
+    <!-- 问答游戏区域 -->
+    <div class="quiz-section" data-group="quiz">
+      <h2>西瓜知识问答游戏</h2>
+      <div class="question">
+        <p>西瓜原产于哪个大洲？</p>
+        <div class="answer" data-correct="false">亚洲</div>
+        <div class="answer" data-correct="true">非洲</div>
+        <div class="answer" data-correct="false">欧洲</div>
+      </div>
+      <div class="question">
+        <p>西瓜传入中国大约是在哪个朝代？</p>
+        <div class="answer" data-correct="false">汉朝</div>
+        <div class="answer" data-correct="true">唐朝</div>
+        <div class="answer" data-correct="false">宋朝</div>
+      </div>
+      <div class="question">
+        <p>西瓜最常见的果肉颜色是什么？</p>
+        <div class="answer" data-correct="false">黄色</div>
+        <div class="answer" data-correct="true">红色</div>
+        <div class="answer" data-correct="false">绿色</div>
+      </div>
+      <div class="question">
+        <p>以下哪种不是西瓜的食用方法？</p>
+        <div class="answer" data-correct="false">直接食用</div>
+        <div class="answer" data-correct="false">制作饮品</div>
+        <div class="answer" data-correct="true">腌制咸菜</div>
+      </div>
+      <div class="question">
+        <p>西瓜在种植时适宜的土壤类型是？</p>
+        <div class="answer" data-correct="false">黏土</div>
+        <div class="answer" data-correct="true">砂质壤土</div>
+        <div class="answer" data-correct="false">盐碱土</div>
+      </div>
+      <div class="question">
+        <p>西瓜的哪个营养成分含量相对较高？</p>
+        <div class="answer" data-correct="false">蛋白质</div>
+        <div class="answer" data-correct="true">维生素C</div>
+        <div class="answer" data-correct="false">脂肪</div>
+      </div>
+      <div class="question">
+        <p>以下哪个名称在古代不代表西瓜？</p>
+        <div class="answer" data-correct="true">冬瓜</div>
+        <div class="answer" data-correct="false">夏瓜</div>
+        <div class="answer" data-correct="false">寒瓜</div>
+      </div>
+      <div class="question">
+        <p>西瓜在哪个世纪被欧洲殖民者带到美洲大陆？</p>
+        <div class="answer" data-correct="false">15世纪</div>
+        <div class="answer" data-correct="true">16世纪</div>
+        <div class="answer" data-correct="false">17世纪</div>
+      </div>
+      <div class="result" id="result"></div>
+    </div>
+
+    <!-- 西瓜百科全书程序区域 -->
+    <div class="program-section" data-group="program">
+      <h2>西瓜百科全书程序资源</h2>
+	<p><section class="download-section" data-group="resource">
+  <div class="download-button-container">
+直接下载：
+    <a href="watermelon-code.zip" download class="download-button">
+      <i class="fa fa-download"></i> 西瓜百科全书代码
+    </a>
+  </div>
+</section></p>
+      <p>Gitbub链接：https://github.com/wujc888/watermelon</p>
+      <p>百度网盘链接：https://pan.baidu.com/s/1YXKNHkhcAtbanCyCSdEfcQ</p>
+      <p>提取码：xgxw</p>
+    </div>
+  </div>
+
+  <!-- 底部信息区域 -->
+  <div class="footer">
+    &copy; 2025 版权所有 | 联系我们：xi_gua888@126.com
+    <br>
+    版本号：v1.0.8
+  </div>
+
+  <script>
+    const selectorItems = document.querySelectorAll('.selector-item');
+    const contentSections = document.querySelectorAll('.content-section, .nutrition-section, .usage-section, .food-recommendation-section, .history-section, .cultivation-section, .quiz-section, .program-section');
+
+    // 页面加载时触发“全部”选项的点击事件
+    window.addEventListener('load', () => {
+      const allItem = document.querySelector('.selector-item[data-target="all"]');
+      allItem.click();
+    });
+
+    selectorItems.forEach(item => {
+      item.addEventListener('click', function () {
+        const target = this.dataset.target;
+
+        contentSections.forEach(section => {
+          if (target === 'all') {
+            section.style.display = 'block';
+          } else {
+            section.style.display = section.dataset.group === target? 'block' : 'none';
+          }
+        });
+      });
+    });
+
+    const questions = document.querySelectorAll('.question');
+    const resultDiv = document.getElementById('result');
+    const selectedAnswers = [];
+
+    questions.forEach((question, index) => {
+      const answers = question.querySelectorAll('.answer');
+      answers.forEach(answer => {
+        answer.addEventListener('click', function () {
+          // 移除同一问题下其他选项的选中样式
+          answers.forEach(ans => ans.classList.remove('selected'));
+          // 添加当前选中选项的样式
+          this.classList.add('selected');
+          selectedAnswers[index] = this.dataset.correct === 'true';
+          checkAllAnswered();
+        });
+      });
+    });
+
+    function checkAllAnswered() {
+      if (selectedAnswers.length === questions.length) {
+        const correctCount = selectedAnswers.filter(answer => answer).length;
+        const incorrectCount = selectedAnswers.length - correctCount;
+        resultDiv.innerHTML = `你答对了 ${correctCount} 道题，答错了 ${incorrectCount} 道题。`;
+      }
+    }
+  </script>
+</body>
+
+</html>
