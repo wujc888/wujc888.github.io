@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>西瓜百科全书</title>
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <style>
     /* 全局样式 */
     body {
@@ -17,7 +17,7 @@
     }
 
     /* 网页顶部标题样式 */
-   .top-title {
+    .top-title {
       text-align: center;
       background-color: #c8e6c9;
       padding: 20px 0;
@@ -27,7 +27,7 @@
     }
 
     /* 导航栏样式 */
-   .navbar {
+    .navbar {
       height: 60px;
       background-color: #c8e6c9;
       display: flex;
@@ -35,7 +35,7 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
-   .navbar.back-icon {
+    .navbar.back-icon {
       width: 24px;
       height: 24px;
       background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23388e3c"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>');
@@ -45,11 +45,11 @@
       cursor: pointer;
     }
 
-   .navbar.back-icon:hover {
+    .navbar.back-icon:hover {
       transform: scale(1.1);
     }
 
-   .navbar.share-icon {
+    .navbar.share-icon {
       width: 24px;
       height: 24px;
       background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23388e3c"><path d="M17 11.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0zM18 16a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm0-12a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/></svg>');
@@ -59,19 +59,19 @@
       cursor: pointer;
     }
 
-   .navbar.share-icon:hover {
+    .navbar.share-icon:hover {
       transform: scale(1.1);
     }
 
     /* 选择栏样式 */
-   .selector {
+    .selector {
       display: flex;
       justify-content: center;
       background-color: #e8f5e9;
       padding: 10px 0;
     }
 
-   .selector-item {
+    .selector-item {
       padding: 8px 16px;
       cursor: pointer;
       color: #388e3c;
@@ -79,40 +79,40 @@
       border-radius: 5px;
     }
 
-   .selector-item:hover {
+    .selector-item:hover {
       background-color: #c8e6c9;
     }
 
     /* 内容区域样式 */
-   .content {
+    .content {
       padding: 20px;
     }
 
-   .content-section,
-   .nutrition-section,
-   .usage-section,
-   .food-recommendation-section,
-   .history-section,
-   .cultivation-section,
-   .quiz-section,
-   .program-section {
+    .content-section,
+    .nutrition-section,
+    .usage-section,
+    .food-recommendation-section,
+    .history-section,
+    .cultivation-section,
+    .quiz-section,
+    .program-section {
       display: none;
     }
 
     /* 标题区域样式 */
-   .title-section {
+    .title-section {
       text-align: center;
       margin: 40px 0;
     }
 
-   .title-section h1 {
+    .title-section h1 {
       font-size: 30px;
       color: #e53935;
       font-weight: bold;
       margin-bottom: 20px;
     }
 
-   .title-section hr {
+    .title-section hr {
       width: 100px;
       height: 2px;
       background-color: #c8e6c9;
@@ -121,7 +121,7 @@
     }
 
     /* 内容介绍区域样式 */
-   .content-section p {
+    .content-section p {
       font-size: 16px;
       color: #333333;
       line-height: 1.6;
@@ -129,34 +129,34 @@
     }
 
     /* 营养成分区域样式 */
-   .nutrition-section table {
+    .nutrition-section table {
       width: 100%;
       border-collapse: collapse;
     }
 
-   .nutrition-section table th,
-   .nutrition-section table td {
+    .nutrition-section table th,
+    .nutrition-section table td {
       border: 1px solid #c8e6c9;
       padding: 10px;
     }
 
-   .nutrition-section table th {
+    .nutrition-section table th {
       background-color: #c8e6c9;
       font-weight: bold;
     }
 
-   .nutrition-section table td {
+    .nutrition-section table td {
       font-size: 14px;
       color: #333333;
     }
 
     /* 食用方法区域样式 */
-   .usage-section ul {
+    .usage-section ul {
       list-style-type: none;
       padding: 0;
     }
 
-   .usage-section ul li {
+    .usage-section ul li {
       font-size: 16px;
       color: #333333;
       margin-bottom: 10px;
@@ -164,7 +164,7 @@
       position: relative;
     }
 
-   .usage-section ul li:before {
+    .usage-section ul li:before {
       content: "";
       width: 8px;
       height: 8px;
@@ -176,19 +176,19 @@
     }
 
     /* 美食推荐区域样式 */
-   .food-recommendation-section h2 {
+    .food-recommendation-section h2 {
       font-size: 20px;
       color: #388e3c;
       font-weight: bold;
       margin-bottom: 20px;
     }
 
-   .food-recommendation-section ul {
+    .food-recommendation-section ul {
       list-style-type: none;
       padding: 0;
     }
 
-   .food-recommendation-section ul li {
+    .food-recommendation-section ul li {
       font-size: 16px;
       color: #333333;
       margin-bottom: 10px;
@@ -196,7 +196,7 @@
       position: relative;
     }
 
-   .food-recommendation-section ul li:before {
+    .food-recommendation-section ul li:before {
       content: "";
       width: 8px;
       height: 8px;
@@ -207,20 +207,20 @@
       top: 8px;
     }
 
-   .user-review {
+    .user-review {
       border: 1px solid #c8e6c9;
       padding: 15px;
       margin-bottom: 15px;
       border-radius: 5px;
     }
 
-   .user-review p {
+    .user-review p {
       font-size: 14px;
       color: #333333;
       margin: 0;
     }
 
-   .user-review span {
+    .user-review span {
       font-size: 12px;
       color: #777777;
       display: block;
@@ -228,14 +228,14 @@
     }
 
     /* 西瓜历史区域样式 */
-   .history-section h2 {
+    .history-section h2 {
       font-size: 20px;
       color: #388e3c;
       font-weight: bold;
       margin-bottom: 20px;
     }
 
-   .history-section p {
+    .history-section p {
       font-size: 16px;
       color: #333333;
       line-height: 1.6;
@@ -243,14 +243,14 @@
     }
 
     /* 培育方法区域样式 */
-   .cultivation-section h2 {
+    .cultivation-section h2 {
       font-size: 20px;
       color: #388e3c;
       font-weight: bold;
       margin-bottom: 20px;
     }
 
-   .cultivation-section p {
+    .cultivation-section p {
       font-size: 16px;
       color: #333333;
       line-height: 1.6;
@@ -258,24 +258,24 @@
     }
 
     /* 问答游戏区域样式 */
-   .quiz-section h2 {
+    .quiz-section h2 {
       font-size: 20px;
       color: #388e3c;
       font-weight: bold;
       margin-bottom: 20px;
     }
 
-   .question {
+    .question {
       margin-bottom: 20px;
     }
 
-   .question p {
+    .question p {
       font-size: 16px;
       color: #333333;
       margin-bottom: 10px;
     }
 
-   .answer {
+    .answer {
       margin-bottom: 5px;
       cursor: pointer;
       padding: 8px 12px;
@@ -284,26 +284,27 @@
       background-color: #f9f9f9;
     }
 
-   .answer:hover {
+    .answer:hover {
       background-color: #e8f5e9;
     }
 
     /* 选中答案的样式 */
-   .answer.selected {
+    .answer.selected {
       background-color: #c8e6c9;
     }
 
     /* 底部信息区域样式 */
-   .footer {
+    .footer {
       background-color: #c8e6c9;
       text-align: center;
       padding: 20px;
       color: #333333;
       font-size: 12px;
+      position: relative;
     }
 
     /* 结果显示区域样式 */
-   .result {
+    .result {
       margin-top: 20px;
       padding: 10px;
       border: 1px solid #c8e6c9;
@@ -312,20 +313,179 @@
     }
 
     /* 程序区域样式 */
-   .program-section h2 {
+    .program-section h2 {
       font-size: 20px;
       color: #388e3c;
       font-weight: bold;
       margin-bottom: 20px;
     }
 
-   .program-section p {
+    .program-section p {
       font-size: 16px;
       color: #333333;
       line-height: 1.6;
       margin-bottom: 10px;
     }
 
+    /* 管理员入口按钮样式 */
+    .admin-button {
+      background-color: #add8e6;
+      color: #333333;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      margin-top: 15px;
+      display: inline-block;
+    }
+
+    .admin-button:hover {
+      background-color: #99cfe0;
+    }
+
+    /* 管理员面板样式 */
+    .admin-panel {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #add8e6;
+      padding: 20px;
+      box-sizing: border-box;
+      display: none;
+      z-index: 99;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .admin-panel h2 {
+      font-size: 20px;
+      color: #333333;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .admin-panel table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 15px;
+    }
+
+    .admin-panel table th,
+    .admin-panel table td {
+      border: 1px solid #8ebdd2;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .admin-panel table th {
+      background-color: #99cfe0;
+      font-weight: bold;
+    }
+
+    .admin-panel .button-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
+
+    .admin-panel .exit-button {
+      background-color: #f44336;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .admin-panel .exit-button:hover {
+      background-color: #d32f2f;
+    }
+
+    .admin-panel .clear-data-button {
+      background-color: #ff9800;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .admin-panel .clear-data-button:hover {
+      background-color: #f57c00;
+    }
+
+    /* 访客统计区域样式 */
+    .visitor-stats {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #e8f5e9;
+      border-radius: 5px;
+    }
+
+    .visitor-stats h3 {
+      font-size: 16px;
+      color: #388e3c;
+      margin-bottom: 10px;
+    }
+
+    .visitor-stats p {
+      margin: 5px 0;
+    }
+
+    /* 确认对话框样式 */
+    .confirmation-dialog {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      display: none;
+    }
+
+    .dialog-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      width: 90%;
+    }
+
+    .dialog-content h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .dialog-buttons {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+    }
+
+    .dialog-buttons button {
+      margin-left: 10px;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .dialog-buttons .confirm-button {
+      background-color: #f44336;
+      color: white;
+    }
+
+    .dialog-buttons .cancel-button {
+      background-color: #e0e0e0;
+    }
   </style>
 </head>
 
@@ -493,14 +653,16 @@
     <!-- 西瓜百科全书程序区域 -->
     <div class="program-section" data-group="program">
       <h2>西瓜百科全书程序资源</h2>
-	<p><section class="download-section" data-group="resource">
-  <div class="download-button-container">
-直接下载：
-    <a href="watermelon-code.zip" download class="download-button">
-      <i class="fa fa-download"></i> 西瓜百科全书代码
-    </a>
-  </div>
-</section></p>
+      <p>
+        <section class="download-section" data-group="resource">
+          <div class="download-button-container">
+            直接下载：
+            <a href="watermelon-code.zip" download class="download-button">
+              <i class="fa fa-download"></i> 西瓜百科全书代码
+            </a>
+          </div>
+        </section>
+      </p>
       <p>Gitbub链接：https://github.com/wujc888/watermelon</p>
       <p>百度网盘链接：https://pan.baidu.com/s/1YXKNHkhcAtbanCyCSdEfcQ</p>
       <p>提取码：xgxw</p>
@@ -512,18 +674,88 @@
     &copy; 2025 版权所有 | 联系我们：xi_gua888@126.com
     <br>
     版本号：v1.0.8
+    
+    <!-- 管理员入口按钮 -->
+    <div class="admin-button" id="adminButton">管理员入口</div>
+    
+    <!-- 访客统计 -->
+    <div class="visitor-stats">
+      <h3>访客统计</h3>
+      <p>今日访问量：<span id="today-visits">0</span></p>
+      <p>本周访问量：<span id="week-visits">0</span></p>
+      <p>总访问量：<span id="total-visits">0</span></p>
+    </div>
+  </div>
+
+  <!-- 管理员面板 -->
+  <div class="admin-panel" id="adminPanel">
+    <h2>网站用户统计</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>访问日期</th>
+          <th>访问时间</th>
+          <th>IP地址</th>
+          <th>访问页面</th>
+        </tr>
+      </thead>
+      <tbody id="visitor-table-body">
+        <!-- 数据将通过JavaScript动态填充 -->
+      </tbody>
+    </table>
+    <div class="button-group">
+      <div class="clear-data-button" id="clearDataButton">清空数据</div>
+      <div class="exit-button" id="exitButton">退出管理</div>
+    </div>
+  </div>
+
+  <!-- 确认对话框 -->
+  <div class="confirmation-dialog" id="confirmationDialog">
+    <div class="dialog-content">
+      <h3>确认清空数据</h3>
+      <p>你确定要清空所有访问记录吗？此操作不可撤销。</p>
+      <div class="dialog-buttons">
+        <button class="cancel-button" id="cancelButton">取消</button>
+        <button class="confirm-button" id="confirmButton">确认</button>
+      </div>
+    </div>
   </div>
 
   <script>
     const selectorItems = document.querySelectorAll('.selector-item');
     const contentSections = document.querySelectorAll('.content-section, .nutrition-section, .usage-section, .food-recommendation-section, .history-section, .cultivation-section, .quiz-section, .program-section');
-
-    // 页面加载时触发“全部”选项的点击事件
+    const adminButton = document.getElementById('adminButton');
+    const adminPanel = document.getElementById('adminPanel');
+    const exitButton = document.getElementById('exitButton');
+    const clearDataButton = document.getElementById('clearDataButton');
+    const confirmationDialog = document.getElementById('confirmationDialog');
+    const confirmButton = document.getElementById('confirmButton');
+    const cancelButton = document.getElementById('cancelButton');
+    
+    // 本地存储键名
+    const STORAGE_KEYS = {
+      VISITOR_LOGS: 'watermelon_visitor_logs',
+      VISITOR_STATS: 'watermelon_visitor_stats',
+      TODAY_DATE: 'watermelon_today_date',
+      WEEK_START_DATE: 'watermelon_week_start_date'
+    };
+    
+    // 页面加载时初始化
     window.addEventListener('load', () => {
       const allItem = document.querySelector('.selector-item[data-target="all"]');
       allItem.click();
+      
+      // 初始化访问统计
+      initVisitorStats();
+      
+      // 记录用户访问
+      logUserVisit();
+      
+      // 加载并显示访问记录
+      loadVisitorLogs();
     });
 
+    // 内容选择器逻辑
     selectorItems.forEach(item => {
       item.addEventListener('click', function () {
         const target = this.dataset.target;
@@ -535,9 +767,18 @@
             section.style.display = section.dataset.group === target? 'block' : 'none';
           }
         });
+        
+        // 移除所有选中状态
+        selectorItems.forEach(i => i.classList.remove('selected'));
+        // 添加当前选中状态
+        this.classList.add('selected');
+        
+        // 记录用户访问
+        logUserVisit();
       });
     });
 
+    // 问答游戏逻辑
     const questions = document.querySelectorAll('.question');
     const resultDiv = document.getElementById('result');
     const selectedAnswers = [];
@@ -563,7 +804,196 @@
         resultDiv.innerHTML = `你答对了 ${correctCount} 道题，答错了 ${incorrectCount} 道题。`;
       }
     }
+
+    // 管理员入口交互
+    adminButton.addEventListener('click', () => {
+      adminPanel.style.display = 'block';
+      adminButton.style.display = 'none';
+    });
+
+    exitButton.addEventListener('click', () => {
+      adminPanel.style.display = 'none';
+      adminButton.style.display = 'block';
+    });
+
+    // 清空数据确认对话框
+    clearDataButton.addEventListener('click', () => {
+      confirmationDialog.style.display = 'flex';
+    });
+
+    cancelButton.addEventListener('click', () => {
+      confirmationDialog.style.display = 'none';
+    });
+
+    confirmButton.addEventListener('click', () => {
+      // 清空访问记录
+      localStorage.removeItem(STORAGE_KEYS.VISITOR_LOGS);
+      
+      // 重置统计数据
+      const initialStats = {
+        today: 0,
+        week: 0,
+        total: 0
+      };
+      localStorage.setItem(STORAGE_KEYS.VISITOR_STATS, JSON.stringify(initialStats));
+      
+      // 刷新表格
+      document.getElementById('visitor-table-body').innerHTML = '';
+      
+      // 更新统计显示
+      updateVisitorStatsDisplay(initialStats);
+      
+      // 关闭对话框
+      confirmationDialog.style.display = 'none';
+    });
+
+    // 初始化访问统计
+    function initVisitorStats() {
+      const today = new Date().toISOString().split('T')[0];
+      const storedTodayDate = localStorage.getItem(STORAGE_KEYS.TODAY_DATE);
+      
+      // 获取统计数据
+      let stats = JSON.parse(localStorage.getItem(STORAGE_KEYS.VISITOR_STATS));
+      
+      // 如果是新的一天，重置今日统计
+      if (today !== storedTodayDate) {
+        if (!stats) {
+          stats = {
+            today: 0,
+            week: 0,
+            total: 0
+          };
+        } else {
+          stats.today = 0;
+        }
+        
+        localStorage.setItem(STORAGE_KEYS.TODAY_DATE, today);
+      }
+      
+      // 如果没有统计数据，初始化
+      if (!stats) {
+        stats = {
+          today: 0,
+          week: 0,
+          total: 0
+        };
+        localStorage.setItem(STORAGE_KEYS.VISITOR_STATS, JSON.stringify(stats));
+      }
+      
+      // 更新显示
+      updateVisitorStatsDisplay(stats);
+    }
+
+    // 记录用户访问
+    function logUserVisit() {
+      // 获取当前日期和时间
+      const now = new Date();
+      const date = now.toISOString().split('T')[0];
+      const time = now.toTimeString().split(' ')[0];
+      
+      // 获取当前页面
+      const currentPage = document.querySelector('.selector-item.selected')?.textContent || '全部';
+      
+      // 生成一个模拟IP地址
+      const ip = `192.168.1.${Math.floor(Math.random() * 255)}`;
+      
+      // 创建访问记录
+      const visitRecord = {
+        date,
+        time,
+        ip,
+        page: currentPage
+      };
+      
+      // 保存到本地存储
+      const logs = JSON.parse(localStorage.getItem(STORAGE_KEYS.VISITOR_LOGS)) || [];
+      logs.unshift(visitRecord);
+      
+      // 只保留最近的100条记录
+      if (logs.length > 100) {
+        logs.splice(100);
+      }
+      
+      localStorage.setItem(STORAGE_KEYS.VISITOR_LOGS, JSON.stringify(logs));
+      
+      // 更新统计
+      updateStats();
+      
+      // 刷新表格显示
+      loadVisitorLogs();
+    }
+
+    // 更新统计数据
+    function updateStats() {
+      const today = new Date().toISOString().split('T')[0];
+      const logs = JSON.parse(localStorage.getItem(STORAGE_KEYS.VISITOR_LOGS)) || [];
+      
+      // 获取统计数据
+      let stats = JSON.parse(localStorage.getItem(STORAGE_KEYS.VISITOR_STATS)) || {
+        today: 0,
+        week: 0,
+        total: 0
+      };
+      
+      // 更新今日访问量
+      stats.today = logs.filter(log => log.date === today).length;
+      
+      // 更新本周访问量（过去7天）
+      const weekAgo = new Date();
+      weekAgo.setDate(weekAgo.getDate() - 7);
+      const weekAgoDate = weekAgo.toISOString().split('T')[0];
+      
+      stats.week = logs.filter(log => {
+        return new Date(log.date) >= new Date(weekAgoDate);
+      }).length;
+      
+      // 更新总访问量
+      stats.total = logs.length;
+      
+      // 保存统计数据
+      localStorage.setItem(STORAGE_KEYS.VISITOR_STATS, JSON.stringify(stats));
+      
+      // 更新显示
+      updateVisitorStatsDisplay(stats);
+    }
+
+    // 更新统计显示
+    function updateVisitorStatsDisplay(stats) {
+      document.getElementById('today-visits').textContent = stats.today;
+      document.getElementById('week-visits').textContent = stats.week;
+      document.getElementById('total-visits').textContent = stats.total.toLocaleString();
+    }
+
+    // 加载并显示访问记录
+    function loadVisitorLogs() {
+      const logs = JSON.parse(localStorage.getItem(STORAGE_KEYS.VISITOR_LOGS)) || [];
+      const tableBody = document.getElementById('visitor-table-body');
+      
+      // 清空表格
+      tableBody.innerHTML = '';
+      
+      // 如果没有记录，显示空消息
+      if (logs.length === 0) {
+        const emptyRow = document.createElement('tr');
+        emptyRow.innerHTML = `<td colspan="4">暂无访问记录</td>`;
+        tableBody.appendChild(emptyRow);
+        return;
+      }
+      
+      // 添加记录到表格
+      logs.forEach(log => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${log.date}</td>
+          <td>${log.time}</td>
+          <td>${log.ip}</td>
+          <td>${log.page}</td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
   </script>
 </body>
 
 </html>
+  
