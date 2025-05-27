@@ -673,11 +673,11 @@
   <div class="footer">
     &copy; 2025 版权所有 | 联系我们：xi_gua888@126.com
     <br>
-    版本号：v1.8.8
-    
+    版本号：v1.0.8
+
     <!-- 管理员入口按钮 -->
     <div class="admin-button" id="adminButton">管理员入口</div>
-    
+
     <!-- 访客统计 -->
     <div class="visitor-stats">
       <h3>访客统计</h3>
@@ -731,7 +731,7 @@
     const confirmationDialog = document.getElementById('confirmationDialog');
     const confirmButton = document.getElementById('confirmButton');
     const cancelButton = document.getElementById('cancelButton');
-    
+
     // 本地存储键名
     const STORAGE_KEYS = {
       VISITOR_LOGS: 'watermelon_visitor_logs',
@@ -739,18 +739,18 @@
       TODAY_DATE: 'watermelon_today_date',
       WEEK_START_DATE: 'watermelon_week_start_date'
     };
-    
+
     // 页面加载时初始化
     window.addEventListener('load', () => {
       const allItem = document.querySelector('.selector-item[data-target="all"]');
       allItem.click();
-      
+
       // 初始化访问统计
       initVisitorStats();
-      
+
       // 记录用户访问
       logUserVisit();
-      
+
       // 加载并显示访问记录
       loadVisitorLogs();
     });
@@ -767,12 +767,12 @@
             section.style.display = section.dataset.group === target? 'block' : 'none';
           }
         });
-        
+
         // 移除所有选中状态
         selectorItems.forEach(i => i.classList.remove('selected'));
         // 添加当前选中状态
         this.classList.add('selected');
-        
+
         // 记录用户访问
         logUserVisit();
       });
@@ -802,6 +802,8 @@
         const correctCount = selectedAnswers.filter(answer => answer).length;
         const incorrectCount = selectedAnswers.length - correctCount;
         resultDiv.innerHTML = `你答对了 ${correctCount} 道题，答错了 ${incorrectCount} 道题。`;
+      } else {
+        resultDiv.innerHTML = '请回答完所有问题。';
       }
     }
 
@@ -828,7 +830,7 @@
     confirmButton.addEventListener('click', () => {
       // 清空访问记录
       localStorage.removeItem(STORAGE_KEYS.VISITOR_LOGS);
-      
+
       // 重置统计数据
       const initialStats = {
         today: 0,
@@ -836,13 +838,13 @@
         total: 0
       };
       localStorage.setItem(STORAGE_KEYS.VISITOR_STATS, JSON.stringify(initialStats));
-      
+
       // 刷新表格
       document.getElementById('visitor-table-body').innerHTML = '';
-      
+
       // 更新统计显示
       updateVisitorStatsDisplay(initialStats);
-      
+
       // 关闭对话框
       confirmationDialog.style.display = 'none';
     });
@@ -851,10 +853,10 @@
     function initVisitorStats() {
       const today = new Date().toISOString().split('T')[0];
       const storedTodayDate = localStorage.getItem(STORAGE_KEYS.TODAY_DATE);
-      
+
       // 获取统计数据
       let stats = JSON.parse(localStorage.getItem(STORAGE_KEYS.VISITOR_STATS));
-      
+
       // 如果是新的一天，重置今日统计
       if (today !== storedTodayDate) {
         if (!stats) {
@@ -866,10 +868,10 @@
         } else {
           stats.today = 0;
         }
-        
+
         localStorage.setItem(STORAGE_KEYS.TODAY_DATE, today);
       }
-      
+
       // 如果没有统计数据，初始化
       if (!stats) {
         stats = {
@@ -879,7 +881,7 @@
         };
         localStorage.setItem(STORAGE_KEYS.VISITOR_STATS, JSON.stringify(stats));
       }
-      
+
       // 更新显示
       updateVisitorStatsDisplay(stats);
     }
@@ -890,13 +892,13 @@
       const now = new Date();
       const date = now.toISOString().split('T')[0];
       const time = now.toTimeString().split(' ')[0];
-      
+
       // 获取当前页面
       const currentPage = document.querySelector('.selector-item.selected')?.textContent || '全部';
-      
+
       // 生成一个模拟IP地址
       const ip = `192.168.1.${Math.floor(Math.random() * 255)}`;
-      
+
       // 创建访问记录
       const visitRecord = {
         date,
@@ -904,21 +906,21 @@
         ip,
         page: currentPage
       };
-      
+
       // 保存到本地存储
       const logs = JSON.parse(localStorage.getItem(STORAGE_KEYS.VISITOR_LOGS)) || [];
       logs.unshift(visitRecord);
-      
+
       // 只保留最近的100条记录
       if (logs.length > 100) {
         logs.splice(100);
       }
-      
+
       localStorage.setItem(STORAGE_KEYS.VISITOR_LOGS, JSON.stringify(logs));
-      
+
       // 更新统计
       updateStats();
-      
+
       // 刷新表格显示
       loadVisitorLogs();
     }
@@ -927,32 +929,32 @@
     function updateStats() {
       const today = new Date().toISOString().split('T')[0];
       const logs = JSON.parse(localStorage.getItem(STORAGE_KEYS.VISITOR_LOGS)) || [];
-      
+
       // 获取统计数据
       let stats = JSON.parse(localStorage.getItem(STORAGE_KEYS.VISITOR_STATS)) || {
         today: 0,
         week: 0,
         total: 0
       };
-      
+
       // 更新今日访问量
       stats.today = logs.filter(log => log.date === today).length;
-      
+
       // 更新本周访问量（过去7天）
       const weekAgo = new Date();
       weekAgo.setDate(weekAgo.getDate() - 7);
       const weekAgoDate = weekAgo.toISOString().split('T')[0];
-      
+
       stats.week = logs.filter(log => {
         return new Date(log.date) >= new Date(weekAgoDate);
       }).length;
-      
+
       // 更新总访问量
       stats.total = logs.length;
-      
+
       // 保存统计数据
       localStorage.setItem(STORAGE_KEYS.VISITOR_STATS, JSON.stringify(stats));
-      
+
       // 更新显示
       updateVisitorStatsDisplay(stats);
     }
@@ -968,10 +970,10 @@
     function loadVisitorLogs() {
       const logs = JSON.parse(localStorage.getItem(STORAGE_KEYS.VISITOR_LOGS)) || [];
       const tableBody = document.getElementById('visitor-table-body');
-      
+
       // 清空表格
       tableBody.innerHTML = '';
-      
+
       // 如果没有记录，显示空消息
       if (logs.length === 0) {
         const emptyRow = document.createElement('tr');
@@ -979,7 +981,7 @@
         tableBody.appendChild(emptyRow);
         return;
       }
-      
+
       // 添加记录到表格
       logs.forEach(log => {
         const row = document.createElement('tr');
@@ -992,8 +994,21 @@
         tableBody.appendChild(row);
       });
     }
+
+    // 补充分享功能
+    const shareIcon = document.querySelector('.navbar.share-icon');
+    shareIcon.addEventListener('click', function() {
+        const currentUrl = window.location.href;
+        const shareUrl = `https://twitter.com/intent/tweet?text=快来看看西瓜百科全书&url=${currentUrl}`;
+        window.open(shareUrl, '_blank', 'width=550,height=420');
+    });
+
+    // 补充返回功能
+    const backIcon = document.querySelector('.navbar.back-icon');
+    backIcon.addEventListener('click', function() {
+        window.history.back();
+    });
   </script>
 </body>
 
 </html>
-  
